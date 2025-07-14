@@ -43,3 +43,31 @@ Route::get('/hello-world', function () {
         'name' => 'Eza'
     ]);
 });
+
+// Route with parameter
+Route::get('products/{id}', function ($productId) {
+    return "Product $productId";
+});
+
+Route::get('/products/{product}/items/{item}', function ($productId, $itemId) {
+    return "Product $productId, Item $itemId";
+});
+
+// Route with parameter and regular expression
+Route::get('/categories/{id}', function ($categoryId) {
+    return "Category $categoryId";
+})->where('id', '[0-9]+');
+
+// Optional Route Parameter
+Route::get('/users/{id?}', function (string $userId = '404') {
+    return "User : $userId";
+});
+
+// Route Conflict
+Route::get('/conflict/eza', function () {
+    return "Conflict Eza Pratama";
+});
+
+Route::get('/conflict/{name}', function ($name) {
+    return "Conflict $name";
+});
