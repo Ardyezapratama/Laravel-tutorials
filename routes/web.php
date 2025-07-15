@@ -95,3 +95,6 @@ Route::post('/input/hello/first', [InputController::class, 'helloFirstName']);
 Route::post('/input/hello/input', [InputController::class, 'helloInput']);
 Route::post('/input/hello/array', [InputController::class, 'helloArray']);
 
+// Requst Input Type
+Route::post('input/type', [InputController::class, 'inputType']);
+
