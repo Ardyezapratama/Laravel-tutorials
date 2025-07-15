@@ -14,7 +14,7 @@ class HelloController extends Controller
         $this->helloService = $helloService;
     }
 
-    public function hell(Request $request, $name): string
+    public function hello(Request $request, $name): string
     {
         // $request->path(); // Untuk mendapatkan path
         // $request->url(); // Untuk mendapat URL tanpa query parameter
